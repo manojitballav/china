@@ -9,17 +9,17 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class spikart{
 	//Initializing the URL
-	static String originUrl = new String("https://www.flipkart.com/mi-5-white-32-gb/product-reviews/itmehxdspg3r3yz3?page=4&pid=MOBEHXDSTKP5ZYCP");
+	static String originUrl = new String("https://www.flipkart.com/mi-5-white-32-gb/product-reviews/itmehxdspg3r3yz3?page=2&pid=MOBEHXDSTKP5ZYCP");
 	
     public static void main(String[] args) throws AWTException {
         funcTionFordata();
     }
     //This function gets the data
     public static void funcTionFordata() throws AWTException {
-        System.setProperty("webdriver.gecko.driver", "C:\\Users\\Xiaomi\\Downloads\\Selenium\\geckodriver.exe"); //path to the web driver
-        DesiredCapabilities capabilities = DesiredCapabilities.firefox(); //Setting firefox capabilities 
-        capabilities.setCapability("marionette", true); //setting the capability if marionette driver
-        FirefoxDriver driver = new FirefoxDriver(); //This starts a new firefox window
+	        System.setProperty("webdriver.gecko.driver", "C:\\Users\\Xiaomi\\Downloads\\Selenium\\geckodriver.exe"); //path to the web driver
+	        DesiredCapabilities capabilities = DesiredCapabilities.firefox(); //Setting firefox capabilities 
+	        capabilities.setCapability("marionette", true); //setting the capability if marionette driver
+	        FirefoxDriver driver = new FirefoxDriver(); //This starts a new firefox window
             driver.get(originUrl); //Pushes the url to the new window
             driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS); //setting the maximum timeout
             for(int i=1;i<15;i++) {
@@ -45,9 +45,9 @@ public class spikart{
            WebElement nxtButton=driver.findElement(By.xpath(".//*[@id='container']/div/div[2]/div/div/div[2]/div[2]/div[2]/div[16]/div[2]/a/span/span"));
            //Click function to proceed to the next page 
            nxtButton.click();
+           //This gets the current URL of the page
+           originUrl = driver.getCurrentUrl();
            //calling the function again to scrap the next page
            funcTionFordata();
-           //This gets the current URL of the page
-           String url2 = driver.getCurrentUrl(); //will have to use the url2 in the line 23 >> (driver.get(originUrl))
     }
 }
