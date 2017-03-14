@@ -2,7 +2,7 @@ package builds;
 import java.awt.AWTException;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
-//import org.openqa.selenium.WebDriver; //not required since, the path is set manually on line 19
+//import org.openqa.selenium.WebDriver; //not required since, the path is set manually on line 22
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -47,5 +47,7 @@ public class spikart{
            nxtButton.click();
            //calling the function again to scrap the next page
            funcTionFordata();
+           //This gets the current URL of the page
+           String url2 = driver.getCurrentUrl(); //will have to use the url2 in the line 23 >> (driver.get(originUrl))
     }
 }
