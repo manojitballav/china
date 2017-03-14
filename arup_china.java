@@ -8,8 +8,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class spikart{
-	String originUrl = null;
-	originUrl = "https://www.flipkart.com/mi-5-white-32-gb/product-reviews/itmehxdspg3r3yz3?page=4&pid=MOBEHXDSTKP5ZYCP";
+	static String originUrl = new String("https://www.flipkart.com/mi-5-white-32-gb/product-reviews/itmehxdspg3r3yz3?page=4&pid=MOBEHXDSTKP5ZYCP");
+	//originUrl = "https://www.flipkart.com/mi-5-white-32-gb/product-reviews/itmehxdspg3r3yz3?page=4&pid=MOBEHXDSTKP5ZYCP";
 	
     public static void main(String[] args) throws AWTException {
     	//public static string originUrl;
@@ -46,6 +46,6 @@ public class spikart{
            WebElement nxtButton=driver.findElement(By.xpath(".//*[@id='container']/div/div[2]/div/div/div[2]/div[2]/div[2]/div[16]/div[2]/a/span/span"));
            //Click function to proceed to the next page 
            nxtButton.click();
-            spikart.funcTionFordata();
+           funcTionFordata();
     }
 }
